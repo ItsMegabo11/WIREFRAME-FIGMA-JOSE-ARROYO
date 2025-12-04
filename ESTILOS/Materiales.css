@@ -1,0 +1,107 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: "Arial Black", Arial, sans-serif;
+    background: url('../IMAGES/fondo.png') center top / 100% auto repeat-y fixed;
+    background-size: 100% auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+/* HEADER AMARILLO */
+header {
+    background: #FFD700;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+}
+
+header h1 { font-size: 2.8em; color: #333; text-shadow: 3px 3px 6px rgba(0,0,0,0.3); }
+header nav ul { list-style: none; display: flex; gap: 50px; }
+header nav a { color: #333; text-decoration: none; font-size: 1.5em; font-weight: bold; }
+
+/* TÍTULO "MATERIALES" - IGUAL QUE LAS DEMÁS */
+main > h2 {
+    text-align: center;
+    font-size: 2.8em;
+    margin: 60px 0 50px 0;
+    color: #333;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+    width: 100%;
+}
+
+/* GRID 4 POR FILA */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+    padding: 0 40px 60px;
+    flex: 1;
+}
+
+/* TARJETAS VERDES (color del botón Materiales) */
+main article {
+    background: #43A047;        /* verde perfecto */
+    color: white;
+    width: 340px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+main article h3 {
+    background: #2E7D32;        /* verde más oscuro para el título */
+    padding: 18px;
+    font-size: 1.9em;
+    text-align: center;
+}
+
+main article p {
+    padding: 20px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+main article strong {
+    display: block;
+    background: rgba(0,0,0,0.4);
+    margin: 0 20px 15px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+main article img {
+    width: 160px;
+    margin: 15px auto 30px;
+    display: block;
+    border: 5px solid white;
+    border-radius: 12px;
+    image-rendering: pixelated;
+}
+
+/* SIN LÍNEA VERDE */
+main article::after { display: none; }
+
+/* FOOTER */
+footer {
+    background: #2E7D32;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 1.4em;
+    font-weight: bold;
+    flex-shrink: 0;
+}
