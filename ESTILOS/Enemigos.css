@@ -1,107 +1,106 @@
+/* ESTILOS/Enemigos.css - Tarjetas debajo de cada subtítulo */
 * { margin:0; padding:0; box-sizing:border-box; }
+html,body{height:100%;font-family:"Arial Black",sans-serif;background:url('../IMAGES/fondo.png') center top / 100% auto repeat-y fixed;color:#333;}
+body{min-height:100vh;display:flex;flex-direction:column;}
 
-html, body {
-    height: 100%;
-    margin: 0;
+header{
+    background:#FFD700;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+header h1{font-size:2.8em;color:#333;text-shadow:3px 3px 6px rgba(0,0,0,0.3);}
+header nav ul{list-style:none;display:flex;gap:50px;}
+header nav a{color:#333;text-decoration:none;font-size:1.5em;font-weight:bold;transition:.3s;}
+header nav a:hover{color:#000;}
+
+/* Título principal ENEMIGOS */
+main > h2:first-of-type{
+    text-align:center;
+    font-size:2.8em;
+    margin:60px 0 50px;
+    color:#333;
+    text-shadow:4px 4px 8px rgba(0,0,0,0.4);
 }
 
-body {
-    font-family: "Arial Black", Arial, sans-serif;
-    background: url('../IMAGES/fondo.png') center top / 100% auto repeat-y fixed;
-    background-size: 100% auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: #333;
+/* Cualquier otro h2 = subtítulo (ej: BÁSICOS, INTERMEDIOS, JEFES, etc.) */
+main > h2{
+    text-align:center;
+    font-size:2.6em;
+    margin:80px auto 40px;
+    color:#333;
+    text-shadow:3px 3px 6px rgba(2,0,0,0.4);
+    width:100%;
 }
 
-/* HEADER AMARILLO */
-header {
-    background: #FFD700;
-    padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    flex-shrink: 0;
+/* Flujo normal para que las tarjetas respeten los subtítulos */
+main{
+    display:block;
+    text-align:center;
+    padding:0 40px 80px;
 }
 
-header h1 { font-size: 2.8em; color: #333; text-shadow: 3px 3px 6px rgba(0,0,0,0.3); }
-header nav ul { list-style: none; display: flex; gap: 50px; }
-header nav a { color: #333; text-decoration: none; font-size: 1.5em; font-weight: bold; }
+/* Tarjetas moradas */
+main article{
+    display:inline-block;
+    background:#9C27B0;           /* Morado exacto */
+    color:white;
+    width:340px;
+    margin:20px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,0.6);
+    transition:transform .4s ease;
+    vertical-align:top;
+}
+main article:hover{transform:translateY(-15px);}
 
-/* TÍTULO "ENEMIGOS" - AHORA PERFECTO E IGUAL QUE UNIDADES */
-main > h2 {
-    text-align: center;
-    font-size: 2.8em;
-    margin: 60px 0 50px 0;
-    color: #333;
-    text-shadow: 4px 4px 8px rgba(0,0,0,0.4);
-    width: 100%;
+main article h3{
+    background:#7B1FA2;           /* Morado oscuro */
+    padding:18px;
+    font-size:1.9em;
+    text-align:center;
+}
+main article p{padding:20px;font-size:1.1em;line-height:1.5;}
+main article strong{
+    display:block;
+    background:rgba(0,0,0,0.4);
+    margin:0 20px 15px;
+    padding:10px;
+    border-radius:10px;
+    font-size:1.3em;
+    text-align:center;
+}
+main article img{
+    width:160px;
+    margin:15px auto 30px;
+    display:block;
+    border:5px solid white;
+    border-radius:12px;
+    image-rendering:pixelated;
 }
 
-/* GRID 4 POR FILA */
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 70px;
-    padding: 0 40px 60px;
-    flex: 1;
+footer{
+    background:#2E7D32;
+    color:white;
+    text-align:center;
+    padding:30px;
+    font-size:1.4em;
+    font-weight:bold;
+    margin-top:auto;
 }
 
-/* TARJETAS MORADAS */
-main article {
-    background: #9C27B0;
-    color: white;
-    width: 340px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+/* Responsive */
+@media(max-width:1100px){
+    main article{width:320px;margin:20px;}
 }
-
-main article h3 {
-    background: #7B1FA2;
-    padding: 18px;
-    font-size: 1.9em;
-    text-align: center;
+@media(max-width:768px){
+    header{flex-direction:column;padding:20px;text-align:center;gap:15px;}
+    main article{width:45%;margin:25px;}
 }
-
-main article p {
-    padding: 20px;
-    font-size: 1.1em;
-    line-height: 1.5;
-}
-
-main article strong {
-    display: block;
-    background: rgba(0,0,0,0.4);
-    margin: 0 20px 15px;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 1.3em;
-    text-align: center;
-}
-
-main article img {
-    width: 160px;
-    margin: 15px auto 30px;
-    display: block;
-    border: 5px solid white;
-    border-radius: 12px;
-    image-rendering: pixelated;
-}
-
-/* SIN LÍNEA VERDE */
-main article::after { display: none; }
-
-/* FOOTER */
-footer {
-    background: #2E7D32;
-    color: white;
-    text-align: center;
-    padding: 30px;
-    font-size: 1.4em;
-    font-weight: bold;
-    flex-shrink: 0;
+@media(max-width:480px){
+    main article{width:90%;margin:30px auto;display:block;}
+    main > h2{font-size:2.3em;margin:60px auto 35px;}
 }
