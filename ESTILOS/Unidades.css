@@ -1,4 +1,4 @@
-/* ESTILOS/Unidades.css - Actualizado: menú consistente en todas las páginas */
+/* ESTILOS/Unidades.css - Menú completo corregido + 3 tarjetas por fila */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 html, body {
@@ -36,9 +36,6 @@ header nav a {
     transition:.3s;
 }
 header nav a:hover { color:#000; }
-
-/* ELIMINADO: cualquier regla que oculte enlaces (nth-child u otro) */
-/* Ahora el menú muestra TODOS los enlaces en TODAS las páginas */
 
 /* MAIN - Contenedor flex para tarjetas */
 main {
