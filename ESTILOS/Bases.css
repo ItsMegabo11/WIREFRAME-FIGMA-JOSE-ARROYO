@@ -1,4 +1,4 @@
-/* ESTILOS/Bases.css - 3 tarjetas por fila + ocultar solo "Bases" en esta página */
+/* ESTILOS/Bases.css - 3 tarjetas por fila + ocultar solo "Bases" + header consistente */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 html, body {
@@ -9,7 +9,7 @@ html, body {
 }
 body { min-height:100vh; display:flex; flex-direction:column; }
 
-/* HEADER COMPACTO */
+/* HEADER COMPACTO (igual que en Unidades y Enemigos) */
 header {
     background:#FFD700;
     padding:15px 40px;
@@ -37,7 +37,7 @@ header nav a {
 }
 header nav a:hover { color:#000; }
 
-/* OCULTAR SOLO EL ENLACE "BASES" EN ESTA PÁGINA (es el 4º <li>) */
+/* OCULTAR SOLO EL ENLACE "BASES" EN ESTA PÁGINA (es el 4º <li> en el menú completo) */
 header nav ul li:nth-child(4) {
     display:none;
 }
@@ -64,7 +64,7 @@ main h2:first-of-type {
     text-shadow:4px 4px 8px rgba(0,0,0,0.4);
 }
 
-/* SUBTÍTULOS (para secciones futuras si las agregas) */
+/* SUBTÍTULOS */
 main h2 {
     width:100%;
     text-align:center;
