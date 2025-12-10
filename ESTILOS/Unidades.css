@@ -1,14 +1,5 @@
 /* ESTILOS/Unidades.css - Menú completo corregido + 3 tarjetas por fila */
 * { margin:0; padding:0; box-sizing:border-box; }
-
-html, body {
-    height:100%;
-    font-family:"Arial Black",sans-serif;
-    background:url('/WIREFRAME-FIGMA-JOSE-ARROYO/IMAGES/fondo.png') center top / 100% auto repeat-y fixed;
-    color:#333;
-}
-body { min-height:100vh; display:flex; flex-direction:column; }
-
 /* HEADER COMPACTO */
 header {
     background:#FFD700;
