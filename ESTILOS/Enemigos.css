@@ -1,4 +1,4 @@
-/* ESTILOS/Enemigos.css - 3 tarjetas por fila + header limpio (igual que Unidades pero en morado) */
+/* ESTILOS/Enemigos.css - 3 tarjetas por fila + menú consistente (sin ocultar enlaces) */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 html, body {
@@ -37,10 +37,7 @@ header nav a {
 }
 header nav a:hover { color:#000; }
 
-/* OCULTAR EL ENLACE "ENEMIGOS" EN ESTA PÁGINA (es el segundo <li> después de Inicio) */
-header nav ul li:nth-child(3) {
-    display:none;
-}
+/* SIN REGLAS DE OCULTAR ENLACES - Menú completo en todas las páginas */
 
 /* MAIN - Contenedor flex para tarjetas */
 main {
@@ -49,7 +46,7 @@ main {
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:50px;               /* Espacio amplio entre tarjetas */
+    gap:50px;
     max-width:1400px;
     margin:0 auto;
 }
@@ -64,7 +61,7 @@ main h2:first-of-type {
     text-shadow:4px 4px 8px rgba(0,0,0,0.4);
 }
 
-/* SUBTÍTULOS (si tienes secciones como Básicos, Jefes, etc.) */
+/* SUBTÍTULOS (para secciones como Básicos, Jefes, etc.) */
 main h2 {
     width:100%;
     text-align:center;
@@ -76,10 +73,10 @@ main h2 {
 
 /* TARJETAS MORADAS - 3 POR FILA */
 main article {
-    background:#9C27B0;           /* Morado principal */
+    background:#9C27B0;
     color:white;
     width:340px;
-    height:540px;                  /* Altura fija para uniformidad */
+    height:540px;
     border-radius:22px;
     overflow:hidden;
     box-shadow:0 14px 35px rgba(0,0,0,0.6);
@@ -93,7 +90,7 @@ main article:hover {
 }
 
 main article h3 {
-    background:#7B1FA2;           /* Morado oscuro */
+    background:#7B1FA2;
     padding:20px;
     font-size:2em;
     text-align:center;
@@ -136,7 +133,7 @@ footer {
     margin-top:auto;
 }
 
-/* RESPONSIVE - 3 por fila hasta ~1150px, luego 2, luego 1 */
+/* RESPONSIVE */
 @media (max-width: 1200px) {
     main { gap:40px; }
     main article { width:320px; height:520px; }

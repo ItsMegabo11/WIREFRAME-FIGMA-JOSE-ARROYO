@@ -1,4 +1,4 @@
-/* ESTILOS/Unidades.css - 3 tarjetas por fila DEFINITIVO + fondo arreglado */
+/* ESTILOS/Unidades.css - Actualizado: menú consistente en todas las páginas */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 html, body {
@@ -37,10 +37,8 @@ header nav a {
 }
 header nav a:hover { color:#000; }
 
-/* OCULTAR EL ENLACE "UNIDADES" EN ESTA PÁGINA */
-header nav ul li:nth-child(2) {
-    display:none;
-}
+/* ELIMINADO: cualquier regla que oculte enlaces (nth-child u otro) */
+/* Ahora el menú muestra TODOS los enlaces en TODAS las páginas */
 
 /* MAIN - Contenedor flex para tarjetas */
 main {
@@ -49,7 +47,7 @@ main {
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:50px;               /* Espacio amplio entre tarjetas */
+    gap:50px;
     max-width:1400px;
     margin:0 auto;
 }
@@ -64,12 +62,12 @@ main h2 {
     text-shadow:4px 4px 8px rgba(0,0,0,0.4);
 }
 
-/* TARJETAS - 3 POR FILA (ancho fijo + altura fija) */
+/* TARJETAS - 3 POR FILA */
 main article {
     background:#FFA500;
     color:white;
-    width:340px;            /* Ancho fijo para que quepan exactamente 3 con gap */
-    height:540px;           /* Altura fija para uniformidad total */
+    width:340px;
+    height:540px;
     border-radius:22px;
     overflow:hidden;
     box-shadow:0 14px 35px rgba(0,0,0,0.6);
@@ -92,7 +90,7 @@ main article p {
     padding:22px;
     font-size:1.15em;
     line-height:1.5;
-    flex-grow:1;            /* El texto ocupa el espacio disponible */
+    flex-grow:1;
 }
 main article strong {
     display:block;
@@ -126,7 +124,7 @@ footer {
     margin-top:auto;
 }
 
-/* RESPONSIVE - 3 por fila hasta ~1150px, luego 2, luego 1 */
+/* RESPONSIVE */
 @media (max-width: 1200px) {
     main { gap:40px; }
     main article { width:320px; height:520px; }
