@@ -1,5 +1,6 @@
-/* ESTILOS/Unidades.css - Tarjetas uniformes + header compacto */
+/* ESTILOS/Unidades.css - Tarjetas PERFECTAMENTE uniformes + header limpio */
 * { margin:0; padding:0; box-sizing:border-box; }
+
 html, body {
     height:100%;
     font-family:"Arial Black",sans-serif;
@@ -11,7 +12,7 @@ body { min-height:100vh; display:flex; flex-direction:column; }
 /* HEADER COMPACTO */
 header {
     background:#FFD700;
-    padding:15px 40px; /* Reducido para más espacio */
+    padding:15px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -25,51 +26,38 @@ header h1 {
 header nav ul {
     list-style:none;
     display:flex;
-    gap:30px; /* Espacio reducido entre links */
+    gap:35px;
 }
 header nav a {
     color:#333;
     text-decoration:none;
-    font-size:1.2em; /* Indicadores más pequeños */
+    font-size:1.2em;
     font-weight:bold;
     transition:.3s;
 }
 header nav a:hover { color:#000; }
 
-/* TÍTULO PRINCIPAL */
-main > h2:first-of-type {
-    text-align:center;
-    font-size:3em;
-    margin:60px auto 50px;
-    color:#333;
-    text-shadow:4px 4px 8px rgba(0,0,0,0.4);
+/* QUITAR EL ENLACE "UNIDADES" CUANDO ESTAMOS EN ESTA PÁGINA */
+header nav ul li:nth-child(2) { /* El segundo <li> es Unidades */
+    display:none;
 }
 
-/* SUBTÍTULOS */
-main > h2 {
-    text-align:center;
-    font-size:2.7em;
-    margin:90px auto 50px;
-    color:#333;
-    text-shadow:3px 3px 6px rgba(0,0,0,0.4);
-    width:100%;
-    padding:0 20px;
-}
-
-/* CONTENEDOR DE TARJETAS - USANDO FLEX PARA ALINEACIÓN PERFECTA */
+/* MAIN CON FLEX PARA TARJETAS */
 main {
+    flex:1;
+    padding:20px 20px 100px;
     display:flex;
     flex-direction:column;
     align-items:center;
-    padding:20px 20px 100px;
-    flex:1;
 }
-main .tarjetas-container { /* Agrega esta clase al div que envuelve las tarjetas en tu HTML */
+
+/* Contenedor flex para las tarjetas (sin div extra) */
+main {
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:30px;
-    max-width:1200px;
+    gap:35px;
+    max-width:1300px;
     width:100%;
 }
 
@@ -77,48 +65,63 @@ main .tarjetas-container { /* Agrega esta clase al div que envuelve las tarjetas
 main article {
     background:#FFA500;
     color:white;
-    width:340px; /* Ancho fijo */
-    height:480px; /* Altura fija para que todas sean iguales */
-    margin:0; /* Quitamos márgenes, usamos gap del contenedor */
+    width:340px;
+    height:520px; /* Altura fija → todas iguales */
     border-radius:22px;
     overflow:hidden;
     box-shadow:0 14px 35px rgba(0,0,0,0.6);
     transition:transform .4s ease, box-shadow .4s ease;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }
 main article:hover {
     transform:translateY(-18px);
     box-shadow:0 25px 60px rgba(0,0,0,0.7);
 }
+
 main article h3 {
     background:#FF8C00;
-    padding:15px;
-    font-size:1.8em;
+    padding:18px;
+    font-size:1.9em;
     text-align:center;
 }
 main article p {
     padding:20px;
-    font-size:1.1em;
-    line-height:1.4;
+    font-size:1.15em;
+    line-height:1.5;
+    flex-grow:1; /* Permite que el texto ocupe espacio disponible */
 }
 main article strong {
     display:block;
     background:rgba(0,0,0,0.4);
     margin:0 20px 15px;
-    padding:10px;
+    padding:12px;
     border-radius:12px;
-    font-size:1.3em;
+    font-size:1.35em;
     text-align:center;
 }
 main article img {
     width:170px;
     height:170px;
-    object-fit:contain; /* Ajusta imagen sin distorsionar, mantiene proporción */
-    margin:15px auto 25px;
+    object-fit:contain;
+    background:rgba(255,255,255,0.2);
+    margin:10px auto;
     display:block;
     border:6px solid white;
     border-radius:16px;
     image-rendering:pixelated;
     box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* TÍTULO */
+main h2 {
+    width:100%;
+    text-align:center;
+    font-size:3em;
+    margin:40px auto 30px;
+    color:#333;
+    text-shadow:4px 4px 8px rgba(0,0,0,0.4);
 }
 
 footer {
@@ -131,30 +134,27 @@ footer {
     margin-top:auto;
 }
 
-/* RESPONSIVE PRO */
-@media (max-width: 1100px) {
-    main .tarjetas-container { gap:20px; }
-    main article { width:320px; height:460px; }
-    main > h2 { font-size:2.7em; margin:80px auto 45px; }
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    main { gap:30px; }
+    main article { width:320px; height:500px; }
+}
+@media (max-width: 1000px) {
+    main article { width:300px; height:480px; }
 }
 @media (max-width: 900px) {
-    main article { width:45%; height:auto; min-height:460px; }
+    main article { width:45%; height:auto; min-height:480px; }
 }
 @media (max-width: 600px) {
-    header { flex-direction:column; padding:15px; gap:10px; }
+    header { flex-direction:column; padding:15px; gap:10px; text-align:center; }
     header h1 { font-size:2em; }
-    header nav ul { gap:20px; }
+    header nav ul { gap:25px; }
     header nav a { font-size:1.1em; }
-    main { padding:15px 15px 90px; }
-    main article { width:90%; height:auto; min-height:480px; margin:15px auto; }
-    main > h2:first-of-type { font-size:2.4em; margin:50px auto 40px; }
-    main > h2 { font-size:2.2em; margin:70px auto 40px; }
+    main { padding:15px; gap:30px; }
+    main article { width:90%; height:auto; min-height:500px; }
+    main h2 { font-size:2.5em; margin:40px auto 30px; }
 }
 @media (max-width: 400px) {
     header h1 { font-size:1.8em; }
-    header nav a { font-size:1em; }
-    main > h2:first-of-type { font-size:2.2em; }
-    main > h2 { font-size:2em; }
-    main article h3 { font-size:1.7em; }
-    main article img { width:150px; height:150px; }
+    main h2 { font-size:2.2em; }
 }
