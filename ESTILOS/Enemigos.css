@@ -37,11 +37,6 @@ header nav a {
 }
 header nav a:hover { color:#000; }
 
-/* OCULTAR SOLO EL ENLACE "ENEMIGOS" EN ESTA PÁGINA (es el 3º <li>) */
-header nav ul li:nth-child(3) {
-    display:none;
-}
-
 /* MAIN - Contenedor flex para tarjetas */
 main {
     flex:1;
