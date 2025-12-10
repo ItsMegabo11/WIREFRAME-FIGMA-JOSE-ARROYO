@@ -1,4 +1,4 @@
-/* ESTILOS/Unidades.css - Tarjetas PERFECTAMENTE uniformes + header limpio */
+/* ESTILOS/Unidades.css - 3 tarjetas por fila + todo perfecto */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 html, body {
@@ -19,7 +19,7 @@ header {
     box-shadow:0 4px 12px rgba(0,0,0,0.3);
 }
 header h1 {
-    font-size:2.2em; /* Logo más pequeño */
+    font-size:2.2em;
     color:#333;
     text-shadow:3px 3px 6px rgba(0,0,0,0.3);
 }
@@ -37,43 +37,44 @@ header nav a {
 }
 header nav a:hover { color:#000; }
 
-/* QUITAR EL ENLACE "UNIDADES" CUANDO ESTAMOS EN ESTA PÁGINA */
-header nav ul li:nth-child(2) { /* El segundo <li> es Unidades */
+/* OCULTAR EL ENLACE "UNIDADES" EN ESTA PÁGINA */
+header nav ul li:nth-child(2) {
     display:none;
 }
 
-/* MAIN CON FLEX PARA TARJETAS */
+/* MAIN */
 main {
     flex:1;
-    padding:20px 20px 100px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-/* Contenedor flex para las tarjetas (sin div extra) */
-main {
+    padding:40px 20px 100px;
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:35px;
-    max-width:1300px;
-    width:100%;
+    gap:40px;
+    max-width:1400px;
+    margin:0 auto;
 }
 
-/* TARJETAS UNIFORMES */
+main h2 {
+    width:100%;
+    text-align:center;
+    font-size:3em;
+    margin:0 auto 40px;
+    color:#333;
+    text-shadow:4px 4px 8px rgba(0,0,0,0.4);
+}
+
+/* TARJETAS - 3 POR FILA */
 main article {
     background:#FFA500;
     color:white;
     width:340px;
-    height:520px; /* Altura fija → todas iguales */
+    height:520px;
     border-radius:22px;
     overflow:hidden;
     box-shadow:0 14px 35px rgba(0,0,0,0.6);
     transition:transform .4s ease, box-shadow .4s ease;
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
 }
 main article:hover {
     transform:translateY(-18px);
@@ -90,7 +91,7 @@ main article p {
     padding:20px;
     font-size:1.15em;
     line-height:1.5;
-    flex-grow:1; /* Permite que el texto ocupe espacio disponible */
+    flex-grow:1;
 }
 main article strong {
     display:block;
@@ -106,22 +107,11 @@ main article img {
     height:170px;
     object-fit:contain;
     background:rgba(255,255,255,0.2);
-    margin:10px auto;
-    display:block;
+    margin:10px auto 20px;
     border:6px solid white;
     border-radius:16px;
     image-rendering:pixelated;
     box-shadow:0 4px 12px rgba(0,0,0,0.4);
-}
-
-/* TÍTULO */
-main h2 {
-    width:100%;
-    text-align:center;
-    font-size:3em;
-    margin:40px auto 30px;
-    color:#333;
-    text-shadow:4px 4px 8px rgba(0,0,0,0.4);
 }
 
 footer {
@@ -134,8 +124,8 @@ footer {
     margin-top:auto;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1200px) {
+/* RESPONSIVE - 3 por fila hasta 1100px, luego 2, luego 1 */
+@media (max-width: 1150px) {
     main { gap:30px; }
     main article { width:320px; height:500px; }
 }
@@ -150,9 +140,9 @@ footer {
     header h1 { font-size:2em; }
     header nav ul { gap:25px; }
     header nav a { font-size:1.1em; }
-    main { padding:15px; gap:30px; }
+    main { padding:20px 15px 90px; gap:30px; }
     main article { width:90%; height:auto; min-height:500px; }
-    main h2 { font-size:2.5em; margin:40px auto 30px; }
+    main h2 { font-size:2.5em; }
 }
 @media (max-width: 400px) {
     header h1 { font-size:1.8em; }
