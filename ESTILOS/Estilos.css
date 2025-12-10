@@ -4,7 +4,7 @@
 html, body {
     height: 100%;
     font-family: "Arial Black", Arial, sans-serif;
-    background: url('../IMAGES/fondo.png') center top / 100% auto repeat-y fixed;
+    background: url('/WIREFRAME-FIGMA-JOSE-ARROYO/IMAGES/fondo.png') center top / 100% auto repeat-y fixed;
     color: #333;
 }
 
