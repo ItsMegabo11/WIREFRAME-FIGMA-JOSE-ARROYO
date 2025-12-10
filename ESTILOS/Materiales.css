@@ -1,4 +1,4 @@
-/* ESTILOS/Materiales.css - 3 tarjetas por fila + menú completo (sin ocultar nada) */
+/* ESTILOS/Materiales.css - Arreglado: 3 tarjetas por fila + menú completo */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 html, body {
@@ -9,7 +9,7 @@ html, body {
 }
 body { min-height:100vh; display:flex; flex-direction:column; }
 
-/* HEADER COMPACTO (igual que las otras páginas) */
+/* HEADER COMPACTO */
 header {
     background:#FFD700;
     padding:15px 40px;
@@ -37,7 +37,7 @@ header nav a {
 }
 header nav a:hover { color:#000; }
 
-/* SIN OCULTAR NINGÚN ENLACE - Menú completo en esta página */
+/* SIN OCULTAR NINGÚN ENLACE */
 
 /* MAIN - Contenedor flex para tarjetas */
 main {
@@ -61,7 +61,7 @@ main h2 {
     text-shadow:4px 4px 8px rgba(0,0,0,0.4);
 }
 
-/* SUBTÍTULOS (clase .subtitulo si los usas) */
+/* SUBTÍTULOS (.subtitulo) */
 .subtitulo {
     width:100%;
     text-align:center;
@@ -73,7 +73,7 @@ main h2 {
 
 /* TARJETAS VERDES - 3 POR FILA */
 main article {
-    background:#43A047;           /* Verde principal */
+    background:#43A047;
     color:white;
     width:340px;
     height:540px;
@@ -90,7 +90,7 @@ main article:hover {
 }
 
 main article h4 {
-    background:#2E7D32;           /* Verde oscuro */
+    background:#2E7D32;
     padding:20px;
     font-size:2em;
     text-align:center;
