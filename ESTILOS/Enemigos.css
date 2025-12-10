@@ -1,4 +1,4 @@
-/* ESTILOS/Enemigos.css - 3 tarjetas por fila + menú consistente (sin ocultar enlaces) */
+/* ESTILOS/Enemigos.css - 3 tarjetas por fila + ocultar solo "Enemigos" en esta página */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 html, body {
@@ -37,7 +37,10 @@ header nav a {
 }
 header nav a:hover { color:#000; }
 
-/* SIN REGLAS DE OCULTAR ENLACES - Menú completo en todas las páginas */
+/* OCULTAR SOLO EL ENLACE "ENEMIGOS" EN ESTA PÁGINA (es el 3º <li>) */
+header nav ul li:nth-child(3) {
+    display:none;
+}
 
 /* MAIN - Contenedor flex para tarjetas */
 main {
@@ -61,7 +64,7 @@ main h2:first-of-type {
     text-shadow:4px 4px 8px rgba(0,0,0,0.4);
 }
 
-/* SUBTÍTULOS (para secciones como Básicos, Jefes, etc.) */
+/* SUBTÍTULOS */
 main h2 {
     width:100%;
     text-align:center;
