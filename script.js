@@ -129,4 +129,15 @@ document.addEventListener("DOMContentLoaded", function () {
         .home-buttons article { transition:all 0.5s ease !important; }
     `;
     document.head.appendChild(style);
+
+    // ================== 7. MENÚ HAMBURGUESA ==================
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('header nav');
+    
+    if (hamburger && nav) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+    }
 });

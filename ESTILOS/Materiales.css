@@ -153,3 +153,59 @@ footer {
     main h2 { font-size:2.2em; }
     .subtitulo { font-size:2.1em; }
 }
+/* MENÚ HAMBURGUESA - Solo en móviles */
+@media (max-width: 600px) {
+    /* Botón hamburguesa */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 4px;
+        background: #333;
+        margin: 6px 0;
+        transition: 0.3s;
+    }
+
+    /* Cambiar icono cuando está abierto */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Ocultar el menú por defecto en móvil */
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        background: #FFD700;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    header nav ul.show {
+        display: flex;
+    }
+    header nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    header nav a {
+        font-size: 1.4em;
+    }
+}
+
+/* En pantallas grandes: ocultar el botón hamburguesa */
+.hamburger {
+    display: none;
+}
