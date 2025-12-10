@@ -144,26 +144,55 @@ footer {
     header h1 { font-size:2em; }
     header nav a { font-size:1.3em; }
 }
-/* MENÚ HAMBURGUESA - Solo en móviles */
+/* MENÚ HAMBURGUESA CLÁSICO - Corregido para que el botón aparezca siempre en móviles */
 @media (max-width: 600px) {
-    /* Botón hamburguesa */
-    .hamburger {
+    /* Ocultar el menú horizontal */
+    header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #FFD700;
+        padding: 20px 0;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        z-index: 999;
+    }
+    header nav.active {
         display: block;
-        cursor: pointer;
+    }
+    header nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+    header nav ul li {
+        text-align: center;
+    }
+    header nav a {
+        font-size: 1.5em;
+        display: block;
         padding: 10px;
+    }
+
+    /* MOSTRAR EL BOTÓN HAMBURGUESA */
+    .hamburger {
+        display: block !important; /* Forzamos que se muestre */
+        cursor: pointer;
+        padding: 15px;
     }
     .hamburger span {
         display: block;
-        width: 30px;
-        height: 4px;
+        width: 35px;
+        height: 5px;
         background: #333;
-        margin: 6px 0;
+        margin: 7px 0;
         transition: 0.3s;
+        border-radius: 3px;
     }
 
-    /* Cambiar icono cuando está abierto */
+    /* Animación a X al abrir */
     .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px);
+        transform: rotate(45deg) translate(10px, 10px);
     }
     .hamburger.active span:nth-child(2) {
         opacity: 0;
@@ -171,32 +200,9 @@ footer {
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
     }
-
-    /* Ocultar el menú por defecto en móvil */
-    header nav ul {
-        display: none;
-        flex-direction: column;
-        background: #FFD700;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 20px 0;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    header nav ul.show {
-        display: flex;
-    }
-    header nav ul li {
-        margin: 15px 0;
-        text-align: center;
-    }
-    header nav a {
-        font-size: 1.4em;
-    }
 }
 
-/* En pantallas grandes: ocultar el botón hamburguesa */
+/* En pantallas grandes: ocultar el botón */
 .hamburger {
     display: none;
 }
